@@ -1,0 +1,19 @@
+{
+  "name": "serverless-beginner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coolkiddzzz/serverless-beginner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coolkiddzzz/serverless-beginner/issues"
+  },
+  "homepage": "https://github.com/coolkiddzzz/serverless-beginner#readme"
+}

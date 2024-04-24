@@ -1,0 +1,23 @@
+service: mwaiyee1-aws-node-http-api-project # function name of lambda 
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  mwaiyee-api: # function name
+    handler: index.handler
+    events: # API Gateway 
+      - httpApi:
+          path: /
+          method: get
+  mwaiyee-second-api: # function name
+    handler: index.handler_hello
+    events: # API Gateway 
+      - httpApi:
+          path: /hello
+          method: post
+
+plugins:
+  - serverless-offline
