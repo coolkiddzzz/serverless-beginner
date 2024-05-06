@@ -1,4 +1,7 @@
 module.exports.handler = async (event) => {
+  console.log('Start')
+  console.log(event)
+  console.log('End')
   return {
     statusCode: 200,
     body: JSON.stringify(

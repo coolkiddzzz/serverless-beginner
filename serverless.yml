@@ -4,6 +4,8 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs18.x
+  deploymentBucket:
+    name: cohort5.deployment
 
 functions:
   mwaiyee-api: # function name
@@ -12,12 +14,26 @@ functions:
       - httpApi:
           path: /
           method: get
+      - sqs:
+          arn: arn:aws:sqs:us-east-1:255945442255:mwaiyee-sqs
   mwaiyee-second-api: # function name
     handler: index.handler_hello
     events: # API Gateway 
       - httpApi:
           path: /hello
           method: post
+      - sqs:
+          arn:
+            Fn::GetAtt: # get attribute
+              - mwaiyeeQueue
+              - Arn
+
+resources:
+  Resources:
+    mwaiyeeQueue:
+      Type: "AWS::SQS::Queue"
+      Properties:
+        QueueName: "mwaiyee-sqs2"
 
 plugins:
   - serverless-offline
