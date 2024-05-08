@@ -15,7 +15,7 @@ functions:
           path: /
           method: get
       - sqs:
-          arn: arn:aws:sqs:us-east-1:255945442255:mwaiyee-sqs
+          arn: arn:aws:sqs:us-east-1:255945442255:mwaiyee-sqs2
   mwaiyee-second-api: # function name
     handler: index.handler_hello
     events: # API Gateway 
