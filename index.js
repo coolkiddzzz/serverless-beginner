@@ -1,4 +1,4 @@
-module.exports.handler = async (event) => {
+module.exports.firsthandler = async (event) => {
   console.log('Start')
   console.log(event)
   console.log('End')
@@ -6,12 +6,8 @@ module.exports.handler = async (event) => {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: "Your function executed successfully!",
-        input: event,
-      },
-      null,
-      2
-    ),
+        message: "This is get function!",
+      },null,2),
   };
 };
 
